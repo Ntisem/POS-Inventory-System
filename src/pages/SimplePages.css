@@ -1,0 +1,126 @@
+.simple-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.simple-page__header h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+
+.simple-page__header p {
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.category-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.category-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.category-card p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.category-card strong {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.category-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: auto;
+}
+
+.txn-table {
+  overflow: hidden;
+}
+
+.txn-table__head,
+.txn-table__row {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 0.8fr 0.9fr 0.8fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 18px;
+}
+
+.txn-table__head {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.txn-table__row {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.txn-table__row:last-child {
+  border-bottom: none;
+}
+
+.txn-client {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.txn-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .txn-table__head {
+    display: none;
+  }
+
+  .txn-table__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}

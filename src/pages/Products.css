@@ -1,0 +1,220 @@
+.products-page {
+  padding-bottom: 80px;
+}
+
+.products-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.products-page__header h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+
+.products-page__header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.products-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.products-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-primary);
+}
+
+.products-table {
+  overflow: hidden;
+}
+
+.products-table__head,
+.products-row {
+  display: grid;
+  grid-template-columns: 40px minmax(160px, 1.6fr) 1fr 0.7fr 0.8fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 18px;
+}
+
+.products-table__head {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.products-row {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.15s;
+}
+
+.products-row:last-child {
+  border-bottom: none;
+}
+
+.products-row:hover,
+.products-row.is-selected {
+  background: var(--bg-hover);
+}
+
+.products-row__product strong {
+  display: block;
+  font-size: 0.92rem;
+}
+
+.products-row__product span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.products-row__actions {
+  display: flex;
+  gap: 2px;
+  justify-content: flex-end;
+}
+
+.products-empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.bulk-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-panel-solid);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-panel);
+  backdrop-filter: blur(16px);
+}
+
+.bulk-bar span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0 6px;
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-drawer {
+  width: min(440px, 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+  border-right: none;
+}
+
+.edit-drawer__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 22px 22px 12px;
+}
+
+.edit-drawer__head h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.edit-drawer__head p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.edit-drawer__form {
+  flex: 1;
+  overflow: auto;
+  padding: 8px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-drawer__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.edit-drawer__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 22px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.bulk-edit-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .products-table__head {
+    display: none;
+  }
+
+  .products-row {
+    grid-template-columns: 40px 1fr auto;
+    grid-template-rows: auto auto;
+  }
+
+  .products-row > span:nth-child(3),
+  .products-row > span:nth-child(4),
+  .products-row > span:nth-child(5) {
+    display: none;
+  }
+}
