@@ -1,0 +1,191 @@
+:root,
+[data-theme='dark'] {
+  --bg-base: #07090d;
+  --bg-elevated: #0e1219;
+  --bg-panel: rgba(18, 22, 32, 0.72);
+  --bg-panel-solid: #141924;
+  --bg-input: rgba(255, 255, 255, 0.04);
+  --bg-hover: rgba(255, 255, 255, 0.06);
+  --bg-active: rgba(126, 224, 208, 0.12);
+  --bg-card-light: #e8eaef;
+  --bg-accent-card: #7ee0d0;
+  --bg-overlay: rgba(4, 6, 10, 0.72);
+
+  --text-primary: #f3f5f8;
+  --text-secondary: #9aa3b2;
+  --text-muted: #6b7383;
+  --text-inverse: #0b0e14;
+  --text-on-accent: #0b0e14;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --border-focus: #7ee0d0;
+
+  --accent: #7ee0d0;
+  --accent-soft: rgba(126, 224, 208, 0.18);
+  --accent-glow: rgba(126, 224, 208, 0.35);
+  --purple: #a78bfa;
+  --orange: #f0a06a;
+  --green: #6fd99a;
+  --red: #f07178;
+  --yellow: #e8c56a;
+
+  --sidebar-width: 280px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  --shadow-panel: 0 8px 40px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 24px rgba(126, 224, 208, 0.15);
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Syne', 'DM Sans', sans-serif;
+
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg-base: #eef1f6;
+  --bg-elevated: #f7f8fb;
+  --bg-panel: rgba(255, 255, 255, 0.78);
+  --bg-panel-solid: #ffffff;
+  --bg-input: rgba(15, 20, 30, 0.04);
+  --bg-hover: rgba(15, 20, 30, 0.05);
+  --bg-active: rgba(20, 140, 130, 0.12);
+  --bg-card-light: #ffffff;
+  --bg-accent-card: #5ecfc0;
+  --bg-overlay: rgba(20, 28, 40, 0.45);
+
+  --text-primary: #12161f;
+  --text-secondary: #5a6475;
+  --text-muted: #8a93a3;
+  --text-inverse: #f7f8fb;
+  --text-on-accent: #0b0e14;
+
+  --border-subtle: rgba(15, 20, 30, 0.08);
+  --border-strong: rgba(15, 20, 30, 0.14);
+  --border-focus: #2a9b8f;
+
+  --accent: #2a9b8f;
+  --accent-soft: rgba(42, 155, 143, 0.14);
+  --accent-glow: rgba(42, 155, 143, 0.25);
+  --purple: #7c5cbf;
+  --orange: #d4844a;
+  --green: #2f9e62;
+  --red: #d4505a;
+  --yellow: #c9a03d;
+
+  --shadow-panel: 0 8px 32px rgba(20, 30, 50, 0.08);
+  --shadow-glow: 0 0 20px rgba(42, 155, 143, 0.12);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+[data-theme='dark'] body,
+[data-theme='dark'] #root {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(126, 224, 208, 0.08), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 90% 20%, rgba(167, 139, 250, 0.07), transparent 45%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(240, 160, 106, 0.05), transparent 50%),
+    var(--bg-base);
+}
+
+[data-theme='light'] body,
+[data-theme='light'] #root {
+  background:
+    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(42, 155, 143, 0.1), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 100% 10%, rgba(124, 92, 191, 0.08), transparent 45%),
+    var(--bg-base);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-pill);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-primary);
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-panel-solid) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

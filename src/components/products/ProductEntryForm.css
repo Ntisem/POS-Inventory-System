@@ -1,0 +1,33 @@
+.product-entry {
+  padding: 22px;
+}
+
+.product-entry__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.product-entry__head h3 {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.product-entry__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+.product-entry__desc {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 720px) {
+  .product-entry__grid {
+    grid-template-columns: 1fr;
+  }
+}
